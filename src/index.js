@@ -1,9 +1,6 @@
 import Card from './components/card/card.js';
 import './components/card/card.js'
 
-import Button from './components/button/button.js';
-import './components/button/button.js';
-
 import fetchData from './data/data.js';
 import './data/data.js';
 
@@ -27,8 +24,7 @@ class AppContainer extends HTMLElement {
         this.shadowRoot.appendChild(card);
       });
 
-    const button = document.createElement('my-button');
-    this.shadowRoot.appendChild(button);
+    
         });
     }
 }

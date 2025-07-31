@@ -1,3 +1,5 @@
+import Button from '../button/button.js';
+import '../button/button.js';
 class Card extends HTMLElement {
   constructor() {
     super();
@@ -28,6 +30,8 @@ class Card extends HTMLElement {
       <p>Species: ${this.species}</p>
     </div>
     `
+    const button = document.createElement('my-button');
+    this.shadowRoot.appendChild(button);
   }
 }
 
