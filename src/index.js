@@ -18,6 +18,7 @@ class AppContainer extends HTMLElement {
     fetchData().then(data => {
       data.forEach(user =>{
         const card = document.createElement('my-card');
+        card.setAttribute('image', user.image);
         card.setAttribute('name', user.name);
         card.setAttribute('status', user.status);
         card.setAttribute('species', user.species);

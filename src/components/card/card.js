@@ -7,7 +7,7 @@ class Card extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['name', 'status', 'species'];
+    return ['image', 'name', 'status', 'species'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -25,6 +25,7 @@ class Card extends HTMLElement {
     this.shadowRoot.innerHTML = `
     <div>
     <div>
+    <img src="${this.image}" alt="${this.name}">
       <h2>${this.name}</h2>
       <p>Status: ${this.status}</p>
       <p>Species: ${this.species}</p>

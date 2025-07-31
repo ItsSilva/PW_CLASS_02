@@ -2,7 +2,7 @@ class Button extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.count = 0;
+    this.liked = false;
   }
 
   static get observedAttributes() {
@@ -20,18 +20,25 @@ class Button extends HTMLElement {
     this.render();
   }
 
-  handleCount() {
-    this.count++;
+  handleLike() {
+    if (this.liked) {
+      this.liked = false;
+      this.setAttribute('liked', 'false');
+    } else {
+      this.liked = true;
+      this.setAttribute('liked', 'true');
+    }
+
     this.render();
   }
 
   render() {
     this.shadowRoot.innerHTML = `
-    <button class="counter">Count: ${this.count}</button>
+    <button class="fav-button">${this.liked ? 'Dislike' : 'Like'}</button>
     `
 
-    this.shadowRoot.querySelector('.counter').addEventListener('click', () => {
-      this.handleCount();
+    this.shadowRoot.querySelector('.fav-button').addEventListener('click', () => {
+      this.handleLike();
     });
   }
 }
