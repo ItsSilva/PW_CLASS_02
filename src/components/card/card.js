@@ -5,7 +5,7 @@ class Card extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['name', 'lastname', 'age'];
+    return ['name', 'status', 'species'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -24,8 +24,8 @@ class Card extends HTMLElement {
     <div>
     <div>
       <h2>${this.name}</h2>
-      <p>Last Name: ${this.lastname}</p>
-      <p>Age: ${this.age}</p>
+      <p>Status: ${this.status}</p>
+      <p>Species: ${this.species}</p>
     </div>
     `
   }

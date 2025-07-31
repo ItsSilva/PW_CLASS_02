@@ -1,22 +1,8 @@
-const users = [
-  {
-    id: 1,
-    name: 'Alice',
-    lastname: 'Rose',
-    age: 30,
-  },
-  {
-    id: 2,
-    name: 'Bob',
-    lastname: 'Smith',
-    age: 25,
-  },
-  {
-    id: 3,
-    name: 'Charlie',
-    lastname: 'Brown',
-    age: 35,
-  }
-];
+      const fetchData = async () => {
+          const response = await fetch('https://rickandmortyapi.com/api/character');
+          const data = await response.json();
+        //   console.log(data.results);
+      return data.results;
+    }
 
-export default users;
+export default fetchData;
